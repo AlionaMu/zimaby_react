@@ -1,10 +1,13 @@
+
+
 const ItemCard = (props: any) => {
+  //  props.create(props.id);
   return (
       <div className='card'>
-        <img src={props.src} className='card-image'></img>
+        <img src={props.src} className='card__image'></img>
         <div className='card-contain'>
           <div className='card-contain__text'>
-            <span className='card-contain__text_title'>{props.title}</span>
+            <span className='card-contain__text_title'>{props.props.title}</span>
             <span className='card-contain__text_species'><i>{props.price}</i></span>
             <div className='card-contain__like'>
               <span className='like'></span>
@@ -12,9 +15,10 @@ const ItemCard = (props: any) => {
             </div>
           </div>
           <div className='card-contain__price'>
-             <span className='price'>&#165; {props.price}.00</span>
+             <span className='price'>&#165; {props.props.price}.00</span>
              <span><i>per Kg</i></span>
           </div>
+          <div className='card-contain__button' onClick={event => props.create(event, props.props)}>buy</div>
         </div>
       </div>
   );
