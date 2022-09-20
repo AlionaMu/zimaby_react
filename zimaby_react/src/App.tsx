@@ -8,15 +8,23 @@ import { Item } from './components/ItemsList';
 
 function App() {
   const [cartItems, setCartItem] = useState([ {id: 1, title: 'mittens', price: 40, src: 'images/1.jpg'}]);
+
   const createCartItem = (event: Event, newItem: Item) => {
-    event.preventDefault()
-    setCartItem([...cartItems, newItem])
+    event.preventDefault();
+    console.log('create', newItem.id)
+    setCartItem([...cartItems, newItem]);
+  }
+
+  const removeCartItem = (event: Event, id: number) => {
+    event.preventDefault();
+    console.log('remove', id)
+    setCartItem(cartItems.filter(item => item.id !== id));
   }
 
   return (
     <div>
       <Header />
-      <CartList cartItems={cartItems}/>
+      <CartList cartItems={cartItems} remove={removeCartItem} />
       <ItemsList create={createCartItem}/>
       <Footer />
     </div>

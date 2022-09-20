@@ -2,18 +2,18 @@
 
 const CartItem = (props: any) => {
     return (
-        <div className='cart__item'>
-          <img src={props.props.src} className='cart__image'></img>
-          <div className='card-contain'>
-            <div className='card-contain__text'>
+        <div className='cart-item' id={props.props.id}>
+                      <div className='cart-item__text'>
+                      <img src={props.props.src} className='cart__image'></img>
               <span className='card-contain__text_title'>{props.props.title}</span>
-              <span className='card-contain__text_species'><i>{props.props.price}</i></span>
             </div>
+
+          <div className='cart-item__contain'>
+
             <div className='card-contain__price'>
                <span className='price'>&#165; {props.props.price}.00</span>
-               <span><i>per Kg</i></span>
             </div>
-            <div className='card-contain__button'>delete</div>
+            <div className='cart-item__button' onClick={event => props.remove(event, props.props.id)}>delete</div>
           </div>
         </div>
     );

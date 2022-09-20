@@ -5,14 +5,15 @@ export interface Item {
     id: number;
     title: string;
     price: number;
-    src: string
+    src: string;
+    species?: string
 }
 
 const items: Item[] = [
     {id: 1, title: 'mittens', price: 40, src: 'images/1.jpg'},
     {id: 2, title: 'beanie', price: 40, src: 'images/2.jpg'},
     {id: 3, title: 'scarf', price: 40, src: 'images/3.jpg'},
-    {id: 4, title: 'wide scarf', price: 40, src: 'images/4.jpg'},
+    {id: 4, title: 'scarf', price: 40, src: 'images/4.jpg', species: 'wide'},
     {id: 5, title: 'gloves', price: 40, src: 'images/5.jpg'},
     {id: 6, title: 'mittens', price: 40, src: 'images/6.jpg'},
     {id: 7, title: 'mittens', price: 40, src: 'images/7.jpg'},
