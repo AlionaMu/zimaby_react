@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import ItemCard from './ItemCard';
 
 export interface Item {
@@ -27,17 +26,14 @@ const items: Item[] = [
     {id: 15, title: 'mittens', price: 40, src: 'images/15.jpg'}
 ];
 
-
 const ItemsList = ({create}: any) => {
-
   return (
-
-        <div className="cards-container">
-          {items.map((card: any) => {
-            return <ItemCard props={card} key={card.id} src={card.src} create={create} />
-          })}
-        </div>
-      );
+    <div className="cards-container">
+      {items.map((card: Item) => {
+        return <ItemCard props={card} key={card.id} src={card.src} create={create} />
+      })}
+    </div>
+  );
 };
 
 export default ItemsList;
