@@ -1,8 +1,6 @@
-import React from "react";
 import CartItem from "./CartItem";
 
 const CartList = ( props: any) => {
-
     return (
           <div className="cart__list">
             {props.cartItems.map((item: any) => {

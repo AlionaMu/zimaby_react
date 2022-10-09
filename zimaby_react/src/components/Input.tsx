@@ -1,6 +1,6 @@
 const Input = (props: any) => {
   return (
-    <input onChange={(event) => props.setInputValue(event)} />
+    <input {...props}/>
   );
 };
   
