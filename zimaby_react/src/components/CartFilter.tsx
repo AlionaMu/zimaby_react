@@ -1,8 +1,7 @@
 import Input from "./Input";
 import Select from "./Select";
 
-const CartFilter = ({filter, setFilter}: any) => {
-   console.log(filter)
+const CartFilter = ({filter, setFilter}: any) => { 
   return (
     <div>
       <Input

@@ -1,10 +1,8 @@
-
-
 const ItemCard = (props: any) => {
   
   return (
       <div className='card'>
-        <img src={props.src} className='card__image'></img>
+        <img src={props.src} className='card__image' alt="item"></img>
         <div className='card__contain'>
           <div className='card-contain__text'>
             <span className='card-contain__text_title'>{props.props.title}</span>
@@ -18,7 +16,7 @@ const ItemCard = (props: any) => {
              <span className='price'>&#165; {props.props.price}.00</span>
              <span><i>per Kg</i></span>
           </div>
-          <div className='card__button' onClick={event => props.create(event, props.props)}>buy</div>
+          <div className='card__button button' onClick={event => props.create(event, props.props)}>buy</div>
         </div>
       </div>
   );
