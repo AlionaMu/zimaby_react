@@ -12,9 +12,14 @@ export interface Item {
 const ItemsList = (props: any) => {
   return (
     <div className="cards-container">
-      {props.items.map((card: Item) => {
-        return <ItemCard props={card} key={card.id} src={card.src} create={props.create} />
-      })}
+    
+        {props.items.map((card: Item) => 
+                
+         <ItemCard props={card} key={card.id} src={card.src} create={props.create} />
+        
+  
+)}
+  
     </div>
   );
 };

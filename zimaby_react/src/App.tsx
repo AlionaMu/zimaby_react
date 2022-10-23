@@ -30,7 +30,8 @@ function App() {
   }
 
   const createCard = (newItem: Item) => {  
-    setCardItem([...cardItems, newItem])
+    setModal(false);
+    setCardItem([...cardItems, newItem]);
   }
 
   const sortedCart = useMemo(() => {

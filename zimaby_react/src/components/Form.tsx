@@ -13,7 +13,6 @@ const Form = ({createCard}: any) => {
     createCard(newCard);
   }
 
-
   return (
     <div className="form" onSubmit={addNewCard}>
       <form>

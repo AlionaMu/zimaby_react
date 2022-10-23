@@ -6,8 +6,8 @@ const Modal = ({children, visible, setVisible}: any) => {
       classes.push('active');
     }
     return (
-      <div className={classes.join(' ')}>
-        <div className="modal__content">
+      <div className={classes.join(' ')} onClick={() => setVisible(false)}>
+        <div className="modal__content" onClick={(e) => {e.stopPropagation()}}>
         {children}
         </div>
       </div>
