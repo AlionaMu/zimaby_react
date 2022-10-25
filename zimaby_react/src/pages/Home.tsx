@@ -8,9 +8,6 @@ import Modal from './../components/Modal';
 import Form from './../components/Form';
 import Button from './../components/Button';
 import { items } from './../mocks/Items';
-import PostService from './../API/PostService';
-import Loader from './../components/Loader';
-import { useFetching } from './../hooks/useFetching';
 
 function Home() {
   const arr: any[] = [];
@@ -19,18 +16,8 @@ function Home() {
   const [cartItems, setCartItem] = useState(arr);
   const [filter, setFilter] = useState({sort: '', query: ''});
   const [modal, setModal] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const [totalCount, setTotalCount] = useState(0);
-
-  const [fetching, isPostloading, error] = useFetching(async() => {
-    const response = await PostService.getAll();
-    // console.log(response.data);
-    console.log(response.headers['x-total-count']);
-    setTotalCount(response.headers['x-total-count'])
-  })
-
-  async function fetchPosts() {
+  /* async function fetchPosts() {
     setLoading(true);
     const posts = await PostService.getAll();
     setTimeout(() => {
@@ -38,7 +25,7 @@ function Home() {
       setLoading(false);
     }, 2000)
 
-  }
+  } */
 
   const createCartItem = (event: Event, newItem: Item) => {
     event.preventDefault();
@@ -67,14 +54,10 @@ function Home() {
   }, [filter.query, filter.sort, sortedCart]);
 
   return (
-    <div>
+    <main>
 
-<Button modal={modal} setModal={setModal} text={'create new card'}  func={() => setModal(true)} className={'header__button'}></Button>
-      <Button text={'fetch posts'} func={fetchPosts} className={'header__button'}></Button>
-      {isPostloading ?
-      <Loader></Loader> :
-      <div>LOADED</div>
-      }
+    <Button modal={modal} setModal={setModal} text={'create new card'}  func={() => setModal(true)} className={'header__button'}></Button>
+
       <Modal visible={modal} setVisible={setModal}>
       <Form createCard={createCard}/>
       </Modal>
@@ -89,7 +72,7 @@ function Home() {
       />
       <ItemsList create={createCartItem} items={cardItems}/>
       <Footer />
-    </div>
+    </main>
   );
 }
 
