@@ -15,6 +15,8 @@ function App() {
         </Route>
         <Route path='/posts' element={<Posts />}>
         </Route>
+        <Route path='*' element={<Posts />}>
+        </Route>
       </Routes>
     </BrowserRouter>
   )

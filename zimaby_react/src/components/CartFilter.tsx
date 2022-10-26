@@ -3,7 +3,7 @@ import Select from "./Select";
 
 const CartFilter = ({filter, setFilter}: any) => { 
   return (
-    <div>
+    <div className="cart__input">
       <Input
         placeholder="Search..."
         value={filter.query}

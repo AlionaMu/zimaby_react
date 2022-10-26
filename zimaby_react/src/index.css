@@ -109,6 +109,10 @@ main {
   margin: 20px auto;;
 }
 
+.cart__input {
+  margin: 20px auto;
+}
+
 .cart__list {
   display: flex;
   padding: 15px 30px;
@@ -316,4 +320,13 @@ main {
 .post-item__title {
   color: var(--active-color);
   font-size: 20px;
+}
+
+.pagination__button {
+  margin: 5px;
+}
+
+.pagination__button_current {
+  border: 2px solid var(--active-color);
+  font-weight: 600;
 }

@@ -17,16 +17,6 @@ function Home() {
   const [filter, setFilter] = useState({sort: '', query: ''});
   const [modal, setModal] = useState(false);
 
-  /* async function fetchPosts() {
-    setLoading(true);
-    const posts = await PostService.getAll();
-    setTimeout(() => {
-      console.log(posts);
-      setLoading(false);
-    }, 2000)
-
-  } */
-
   const createCartItem = (event: Event, newItem: Item) => {
     event.preventDefault();
     setCartItem([...cartItems, newItem]);
@@ -61,15 +51,14 @@ function Home() {
       <Modal visible={modal} setVisible={setModal}>
       <Form createCard={createCard}/>
       </Modal>
-     
-      { sortedAndSearchedCart.length ?
-        <CartList cartItems={sortedAndSearchedCart} remove={removeCartItem} /> :
-        <p className='cart_empty'> Cart is empty </p>
-      }
       <CartFilter
         filter={filter}  
         setFilter={setFilter}
       />
+      { sortedAndSearchedCart.length ?
+        <CartList cartItems={sortedAndSearchedCart} remove={removeCartItem} /> :
+        <p className='cart_empty'> Cart is empty </p>
+      }
       <ItemsList create={createCartItem} items={cardItems}/>
       <Footer />
     </main>
